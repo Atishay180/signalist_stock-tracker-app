@@ -29,7 +29,7 @@ const UserDropdown = () => {
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="flex items-center gap-3 text-gray-400 hover:text-yellow-500">
                     <Avatar className="h-8 w-8">
-                        {/* <AvatarImage src="https://github.com/shadcn.png" /> */}
+                        <AvatarImage src="https://github.com/shadcn.png" />
                         <AvatarFallback className="bg-yellow-500 text-yellow-900 text-sm font-bold">
                             {user.name[0]}
                         </AvatarFallback>
@@ -71,14 +71,6 @@ const UserDropdown = () => {
                 <nav className="sm:hidden">
                     <NavItems />
                 </nav>
-
-
-                {/* <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Billing</DropdownMenuItem>
-                <DropdownMenuItem>Team</DropdownMenuItem>
-                <DropdownMenuItem>Subscription</DropdownMenuItem> */}
             </DropdownMenuContent>
         </DropdownMenu>
     )
