@@ -2,6 +2,7 @@ import { text } from "stream/consumers";
 import { inngest } from "./client";
 import { PERSONALIZED_WELCOME_EMAIL_PROMPT } from "./prompts";
 import { success } from "better-auth";
+import { sendWelcomeEmail } from "../nodemailer";
 
 export const sendSignUpEmail = inngest.createFunction(
     { id: 'sign-up-email' },
@@ -34,6 +35,8 @@ export const sendSignUpEmail = inngest.createFunction(
             const introText = (part && 'text' in part ? part.text : null) || 'Thanks for joining signalist. You now have the tools to track market and make smarter moves.'
 
             //EMAIL SENDING LOGIC
+            const { data: { email, name } } = event;
+            return await sendWelcomeEmail({ email, name, intro: introText })
         })
 
         return {
